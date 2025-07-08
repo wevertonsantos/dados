@@ -9,9 +9,11 @@ def main():
             escolha = int(input("Escolha:\n1. Jogar\n2. Sair do jogo\nOpção:"))
             if escolha == 1:
                 jogar_rodada()
-            else:
+            elif escolha == 2:
                 print("Obrigado. Até logo!")
                 break
+            else:
+                print("Opção inválida. Tente novamente.")
         except ValueError:
             print("Somente aceita dígitos")
 
@@ -29,13 +31,13 @@ def jogar_rodada():
         pontos_jogador2 = lancar_dados(jogador2,pontos_jogador2)
         # acrescentando rodadas
         rodadas += 1
-    else:
-        mostrar_ganhador(pontos_jogador1,pontos_jogador2)
+
+    mostrar_ganhador(pontos_jogador1,pontos_jogador2)
 
 def lancar_dados(jogador,pontos_jogador):
     while jogador != "lançar":
-        print("Você não digitou corretamente")
-        jogador = input("Jogador, digite 'Lançar' para lançar o dado: ").strip().lower()
+        print("Comando inválido. Tente novamente digitando 'Lançar'.")
+        jogador = input("Digite 'Lançar' para lançar o dado: ").strip().lower()
 
     # jogando dado
     numero_dado = random.randint(1,6)
@@ -43,7 +45,7 @@ def lancar_dados(jogador,pontos_jogador):
     # somando aos pontos
     pontos_jogador += numero_dado
     print(f"Sua pontuação atual é: {pontos_jogador}\n")
-    
+
     return pontos_jogador
 
 def mostrar_ganhador(pontos_jogador1,pontos_jogador2):
