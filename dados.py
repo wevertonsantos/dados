@@ -36,13 +36,14 @@ def lancar_dados(jogador,pontos_jogador):
     while jogador != "lançar":
         print("Você não digitou corretamente")
         jogador = input("Jogador, digite 'Lançar' para lançar o dado: ").strip().lower()
-    else:
-        # jogando dado
-        numero_dado = random.randint(1,6)
-        print(f"Resultado do lançamento: {numero_dado}")
-        # somando aos pontos
-        pontos_jogador += numero_dado
-        print(f"Sua pontuação atual é: {pontos_jogador}\n")
+
+    # jogando dado
+    numero_dado = random.randint(1,6)
+    print(f"Resultado do lançamento: {numero_dado}")
+    # somando aos pontos
+    pontos_jogador += numero_dado
+    print(f"Sua pontuação atual é: {pontos_jogador}\n")
+    
     return pontos_jogador
 
 def mostrar_ganhador(pontos_jogador1,pontos_jogador2):
