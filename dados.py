@@ -1,11 +1,11 @@
 import random
 
-alvo = 15
+alvo = 10
 tentativas = 1
 total_pontos = 0
 # saída para o usuário
 print("→ Você tem 3 rodadas para somar o resultado dos lançamentos do dado.")
-print("→ Seu objetivo é alcançar uma soma maior que o número alvo para ganhar.")
+print(f"→ Seu objetivo é alcançar uma soma maior que {alvo} pontos para ganhar.")
 
 while tentativas <= 3:
     print(f"Você está na {tentativas}º tentativa")
@@ -20,6 +20,8 @@ while tentativas <= 3:
     tentativas += 1
 
 if total_pontos >= alvo:
+    print(f"Seus pontos foram: {total_pontos}")
     print("Você ganhou!")
 else:
+    print(f"Seus pontos foram: {total_pontos}")
     print("Você perdeu!")
