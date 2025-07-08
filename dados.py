@@ -2,6 +2,8 @@ import random
 
 alvo = 10
 tentativas = 1
+jogador1_pontos = 0
+jogador2_pontos = 0
 # saída para o usuário
 print("→ Você tem 3 rodadas para somar o resultado dos lançamentos do dado.")
 print(f"→ Seu objetivo é alcançar uma soma maior que os pontos do seu adversário para ganhar.")
@@ -15,16 +17,23 @@ while True:
                 # entrada do jogador
                 jogador1 = input("1º jogador, digite 'Lançar' para lançar o dado: ").strip().lower()
                 # verificação
-                if jogador1 == "lançar":
+                while jogador1 != "lançar":
+                    print("Você não digitou corretamente")
+                    jogador1 = input("1º jogador, digite 'Lançar' para lançar o dado: ").strip().lower()
+                else:
                     # jogando dado
                     numero_dado = random.randint(1,6)
                     print(f"Resultado do lançamento: {numero_dado}")
                     # somando aos pontos
                     jogador1_pontos += numero_dado
                     print(f"Sua pontuação atual é: {jogador1_pontos}")
+
                 jogador2 = input("2º jogador, digite 'Lançar' para lançar o dado: ").strip().lower()
                 # verificação
-                if jogador2 == "lançar":
+                while jogador2 != 'lançar':
+                    print("Você não digitou corretamente")
+                    jogador2 = input("2º jogador, digite 'Lançar' para lançar o dado: ").strip().lower()
+                else:
                     # jogando dado
                     numero_dado = random.randint(1,6)
                     print(f"Resultado do lançamento: {numero_dado}")
@@ -33,7 +42,6 @@ while True:
                     print(f"Sua pontuação atual é: {jogador2_pontos}")
                 tentativas += 1
             else:
-                tentativas = 1
                 # verificação
                 if jogador1_pontos > jogador2_pontos:
                     print("Jogador 1, você ganhou!")
@@ -43,6 +51,7 @@ while True:
                     print(f"Seus pontos foram: {jogador2_pontos}")
                 else:
                     print("Houve um empate!")
+                tentativas = 1
                 jogador1_pontos = 0
                 jogador2_pontos = 0
         else:
