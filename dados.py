@@ -3,4 +3,5 @@ import random
 entrada_usuario = "Jogar" #input("Digite 'Jogar' para jogar o dado: ")
 
 if entrada_usuario == "Jogar":
-    random.choice(1,6)
+    dado = random.randint(1,6)
+    print(dado)
