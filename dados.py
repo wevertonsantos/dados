@@ -2,26 +2,38 @@ import random
 
 alvo = 10
 tentativas = 1
-total_pontos = 0
+jogador1_pontos = 0
+jogador2_pontos = 0
 # saída para o usuário
 print("→ Você tem 3 rodadas para somar o resultado dos lançamentos do dado.")
-print(f"→ Seu objetivo é alcançar uma soma maior que {alvo} pontos para ganhar.")
+print(f"→ Seu objetivo é alcançar uma soma maior que os pontos do seu adversário para ganhar.")
 
 while tentativas <= 3:
     print(f"Você está na {tentativas}º tentativa")
     # entrada do jogador
-    jogador1 = input("Digite 'Lançar' para lançar o dado: ").strip()
+    jogador1 = input("1º jogador, digite 'Lançar' para lançar o dado: ").strip()
     if jogador1 == "Lançar":
         # jogando dado
         numero_dado = random.randint(1,6)
         print(f"Resultado do lançamento: {numero_dado}")
         # somando aos pontos
-        total_pontos += numero_dado
+        jogador1_pontos += numero_dado
+        print(f"Sua pontuação atual é: {jogador1_pontos}")
+    jogador2 = input("2º jogador, digite 'Lançar' para lançar o dado: ").strip()
+    if jogador2 == "Lançar":
+        # jogando dado
+        numero_dado = random.randint(1,6)
+        print(f"Resultado do lançamento: {numero_dado}")
+        # somando aos pontos
+        jogador2_pontos += numero_dado
+        print(f"Sua pontuação atual é: {jogador2_pontos}")
     tentativas += 1
 
-if total_pontos >= alvo:
-    print(f"Seus pontos foram: {total_pontos}")
-    print("Você ganhou!")
+if jogador1_pontos > jogador2_pontos:
+    print("Jogador 1, você ganhou!")
+    print(f"Seus pontos foram: {jogador1_pontos}")
+elif jogador2_pontos > jogador1_pontos:
+    print("Jogador 2, você ganhou!")
+    print(f"Seus pontos foram: {jogador2_pontos}")
 else:
-    print(f"Seus pontos foram: {total_pontos}")
-    print("Você perdeu!")
+    print("Houve um empate!")
