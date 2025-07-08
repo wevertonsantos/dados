@@ -38,9 +38,8 @@ O jogo é executado no terminal e conta com validações para evitar erros de di
 → Seu objetivo é alcançar uma soma maior que os pontos do seu adversário para ganhar.
 Escolha:
 
-Jogar
-
-Sair do jogo
+1.Jogar
+2.Sair do jogo
 Opção: 1
 Você está na 1º rodada
 
@@ -88,3 +87,8 @@ Esse projeto foi desenvolvido para praticar:
 - Lógica de jogo com pontuação
 
 - Manipulação de texto e validação de comandos
+
+## 📫 Contato
+Se quiser falar comigo sobre o projeto ou oportunidades:
+- 💼 [LinkedIn](https://linkedin.com/in/wevertonsantoss)
+- 📧 wevercanal@gmail.com
