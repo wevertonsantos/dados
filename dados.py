@@ -30,15 +30,7 @@ def jogar_rodada(pontos_jogador1,pontos_jogador2):
         # acrescentando tentativas
         tentativas += 1
     else:
-        # verificação
-        if pontos_jogador1 > pontos_jogador2:
-            print("Jogador 1, você ganhou!")
-            print(f"Seus pontos foram: {pontos_jogador1}")
-        elif pontos_jogador2 > pontos_jogador1:
-            print("Jogador 2, você ganhou!")
-            print(f"Seus pontos foram: {pontos_jogador2}")
-        else:
-            print("Houve um empate!")
+        mostrando_ganhador(pontos_jogador1,pontos_jogador2)
     tentativas = 1
     pontos_jogador1 = 0
     pontos_jogador2 = 0
@@ -55,5 +47,15 @@ def lancar_dados(jogador,pontos_jogador):
         pontos_jogador += numero_dado
         print(f"Sua pontuação atual é: {pontos_jogador}\n")
     return pontos_jogador
+
+def mostrando_ganhador(pontos_jogador1,pontos_jogador2):
+    if pontos_jogador1 > pontos_jogador2:
+        print("Jogador 1, você ganhou!")
+        print(f"Seus pontos foram: {pontos_jogador1}")
+    elif pontos_jogador2 > pontos_jogador1:
+        print("Jogador 2, você ganhou!")
+        print(f"Seus pontos foram: {pontos_jogador2}")
+    else:
+        print("Houve um empate!")
 
 main()
